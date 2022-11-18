@@ -1,11 +1,14 @@
 package com.example.pairs;
 
+import java.util.ArrayList;
+
 public class Board {
     private int stepsCount;
     private int stepsFinish;
     private boolean winOrLose;
     private int[][] board = {{-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}};
     private int[] cards = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
+    private ArrayList<Couple> couples=new ArrayList<Couple>();
 
     public Board() {
         int tempNumber;
@@ -34,7 +37,12 @@ public class Board {
             }
         }
     }
+
     public int[][] getBoard() {
         return board;
+    }
+
+    public void addCouple(Couple couple) {
+        this.couples.add(couple);
     }
 }
