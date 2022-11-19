@@ -1,6 +1,7 @@
 package com.example.pairs;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Board {
     private int stepsCount;
@@ -8,35 +9,26 @@ public class Board {
     private boolean winOrLose;
     private int[][] board = {{-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}};
     private int[] cards = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
-    private ArrayList<Couple> couples=new ArrayList<Couple>();
+    private ArrayList<Couple> couples = new ArrayList<Couple>();
 
     public Board() {
-        int tempNumber;
-        int i = 0, j = 0;
-        while (this.board[i][j] == -1) {
-            tempNumber = (int) (Math.random() * 12);
-            if (cards[tempNumber] != -1) {
-                this.board[i][j] = cards[tempNumber];
-                cards[tempNumber] = -1;
-            } else {
-                int ii = 0;
-                while (cards[ii] == -1) {
-                    ii++;
-                    tempNumber = ii;
-                }
-                this.board[i][j] = cards[tempNumber];
-                cards[tempNumber] = -1;
-            }
-            j++;
-            if (j == 3) {
-                i++;
-                j = 0;
-            }
-            if (i == 4) {
-                break;
+        int index, temp;
+        Random random = new Random();
+        for (int i = cards.length - 1; i > 0; i--) {
+            index = random.nextInt(i + 1);
+            temp = cards[index];
+            cards[index] = cards[i];
+            cards[i] = temp;
+        }
+        int count = 0;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                board[i][j] = cards[count];
+                count++;
             }
         }
     }
+
 
     public int[][] getBoard() {
         return board;
