@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 public class Result extends AppCompatActivity {
 
+
+   // Sound sound;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
