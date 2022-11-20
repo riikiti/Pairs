@@ -3,23 +3,30 @@ package com.example.pairs;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11;
     Board board;
     int steps = 0;
     Couple couple = new Couple();
+    int AllSteps = 0;
+    TextView text;
+
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        text = findViewById(R.id.textView3);
+        text.setText(Integer.toString(AllSteps));
         board = new Board();
         board.getBoard();
         /*intilize views*/
@@ -71,25 +78,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-
-if (steps==2){
-    couple=new Couple();
-    steps=0;
-}
+        AllSteps++;
+        text.setText(Integer.toString(AllSteps));
+        if (AllSteps==16){
+            Intent(AllSteps);
+        }
+        if (steps == 2) {
+            couple = new Couple();
+            steps = 0;
+        }
         ImageView img;
         switch (Integer.parseInt((String) view.getTag())) {
-            case 0 :
+            case 0:
                 img = img0;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -102,11 +113,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -120,18 +130,18 @@ if (steps==2){
                 }
 
                 break;
-            case 1 :
+            case 1:
                 img = img1;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -144,11 +154,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -163,18 +172,18 @@ if (steps==2){
 
                 break;
 
-            case 2 :
+            case 2:
                 img = img2;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -187,11 +196,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -205,18 +213,18 @@ if (steps==2){
                 }
 
                 break;
-            case 3 :
+            case 3:
                 img = img3;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -229,11 +237,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -247,18 +254,18 @@ if (steps==2){
                 }
 
                 break;
-            case 4 :
+            case 4:
                 img = img4;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -271,11 +278,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -289,18 +295,18 @@ if (steps==2){
                 }
 
                 break;
-            case 5 :
+            case 5:
                 img = img5;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -313,11 +319,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -331,18 +336,18 @@ if (steps==2){
                 }
 
                 break;
-            case 6 :
+            case 6:
                 img = img6;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -355,11 +360,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -373,18 +377,18 @@ if (steps==2){
                 }
 
                 break;
-            case 7 :
+            case 7:
                 img = img7;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -397,11 +401,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -415,18 +418,18 @@ if (steps==2){
                 }
 
                 break;
-            case 8 :
+            case 8:
                 img = img8;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -439,11 +442,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -457,18 +459,18 @@ if (steps==2){
                 }
 
                 break;
-            case 9 :
+            case 9:
                 img = img9;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -481,11 +483,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -499,18 +500,18 @@ if (steps==2){
                 }
 
                 break;
-            case 10 :
+            case 10:
                 img = img10;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -523,11 +524,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -541,18 +541,18 @@ if (steps==2){
                 }
 
                 break;
-            case 11 :
+            case 11:
                 img = img11;
                 steps++;
-                img.setImageDrawable( GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
-                if (steps==1){
+                img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
+                if (steps == 1) {
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     img.setClickable(false);
                 }
-                if(steps==2){
+                if (steps == 2) {
 
-                    if (couple.getImg1()==img){
+                    if (couple.getImg1() == img) {
                         break;
                     }
                     img.setClickable(false);
@@ -565,11 +565,10 @@ if (steps==2){
                         }
 
                         public void onFinish() {
-                            if (couple.isEqual()){
-                                couple=new Couple();
+                            if (couple.isEqual()) {
+                                couple = new Couple();
                                 board.addCouple(couple);
-                            }
-                            else{
+                            } else {
                                 //  Pause();
 
                                 couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
@@ -613,16 +612,11 @@ if (steps==2){
     }
 
 
-    public void Pause(){
-        new CountDownTimer( 200, 200) {
+    public void Intent(int steps) {
 
-            public void onTick(long millisUntilFinished) {
-            }
-
-            public void onFinish() {
-            }
-
-        }.start();
+        Intent intent = new Intent(this, Result.class);
+        intent.putExtra("steps", steps);
+        startActivity(intent);
     }
 
 

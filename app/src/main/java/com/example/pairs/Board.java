@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Board {
     private int stepsCount=0;
-    private int stepsFinish=12;
+    private int stepsFinish=16;
     private boolean winOrLose;
     private int[][] board = {{-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}};
     private int[] cards = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
