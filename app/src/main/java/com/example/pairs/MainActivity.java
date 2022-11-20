@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         AllSteps++;
         text.setText(Integer.toString(AllSteps));
-        if (AllSteps==16){
+        if (AllSteps==20){
             Intent(AllSteps);
         }
         if (steps == 2) {
@@ -616,6 +616,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent intent = new Intent(this, Result.class);
         intent.putExtra("steps", steps);
+        intent.putExtra("board",board.GetLen());
         startActivity(intent);
     }
 

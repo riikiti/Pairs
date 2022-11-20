@@ -49,4 +49,8 @@ public class Board {
     public boolean Finish(){
         return stepsCount==stepsFinish?true:false;
     }
+
+    public  int GetLen(){
+        return couples.size();
+    }
 }
