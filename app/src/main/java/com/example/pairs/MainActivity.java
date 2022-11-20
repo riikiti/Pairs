@@ -85,24 +85,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        couple=new Couple();
-                        board.addCouple(couple);
-                    }
-                    else{
-                      //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -113,23 +127,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
+
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -141,24 +170,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -169,24 +212,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -197,24 +254,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -225,24 +296,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -253,24 +338,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -281,24 +380,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -309,24 +422,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -337,24 +464,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -365,24 +506,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -393,24 +548,38 @@ if (steps==2){
                 if (steps==1){
                     couple.setImg1(img);
                     couple.setFirstCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
+                    img.setClickable(false);
                 }
                 if(steps==2){
 
                     if (couple.getImg1()==img){
                         break;
                     }
-
+                    img.setClickable(false);
                     couple.setSecondCard(board.getBoard()[Integer.parseInt((String) view.getTag()) / 3][Integer.parseInt((String) view.getTag()) % 3]);
                     couple.setImg2(img);
-                    if (couple.isEqual()){
-                        board.addCouple(couple);
-                        couple=new Couple();
-                    }
-                    else{
-                        //  Pause();
-                        couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
-                        couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
-                    }
+                    new CountDownTimer(200, 200) {
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            if (couple.isEqual()){
+                                couple=new Couple();
+                                board.addCouple(couple);
+                            }
+                            else{
+                                //  Pause();
+
+                                couple.getImg1().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg1().setClickable(true);
+                                couple.getImg2().setImageDrawable(getDrawable(R.drawable.card));
+                                couple.getImg2().setClickable(true);
+                            }
+                        }
+                    }.start();
+
                 }
 
                 break;
@@ -445,7 +614,7 @@ if (steps==2){
 
 
     public void Pause(){
-        new CountDownTimer( 1000, 1000) {
+        new CountDownTimer( 200, 200) {
 
             public void onTick(long millisUntilFinished) {
             }
