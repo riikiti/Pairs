@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Board {
-    private int stepsCount;
-    private int stepsFinish;
+    private int stepsCount=0;
+    private int stepsFinish=12;
     private boolean winOrLose;
     private int[][] board = {{-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}, {-1, -1, -1}};
     private int[] cards = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
@@ -36,5 +36,17 @@ public class Board {
 
     public void addCouple(Couple couple) {
         this.couples.add(couple);
+    }
+
+    public int getStepsCount() {
+        return stepsCount;
+    }
+
+    public void setStepsCount(int stepsCount) {
+        this.stepsCount = stepsCount;
+    }
+
+    public boolean Finish(){
+        return stepsCount==stepsFinish?true:false;
     }
 }
