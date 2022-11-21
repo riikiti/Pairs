@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView text;
     CheckBox ch1, ch2, ch3;
     boolean IsPlay = false;
-    MediaPlayer mediaPlayer;
+    MediaPlayer mediaPlayer, mediaPlayerClick;
     Sound sound;
 
     static boolean music = true;
-    boolean click = true;
+    static boolean click = true;
 
     @SuppressLint("ResourceType")
     @Override
@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ch1 = findViewById(R.id.checkBox1);
         ch2 = findViewById(R.id.checkBox2);
         mediaPlayer = MediaPlayer.create(this, R.raw.music);
+        mediaPlayerClick = MediaPlayer.create(this, R.raw.click);
         mediaPlayer.start();
+        mediaPlayerClick.start();
         if (music == true) {
             mediaPlayer.start();
             ch1.setChecked(true);
@@ -109,20 +111,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
-        ch2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (ch2.isChecked()) {
-                    IsPlay = true;
-                } else {
-                    IsPlay = false;
-                }
-            }
-        });
 
 
     }
 
+
+    public void Click(){
+        if (ch2.isChecked()) {
+            mediaPlayerClick.start();
+        } else {
+            mediaPlayerClick.pause();
+        }
+    }
 
     @Override
     public void onClick(View view) {
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ImageView img;
         switch (Integer.parseInt((String) view.getTag())) {
             case 0:
-
+                Click();
                 img = img0;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -181,6 +181,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case 1:
+                Click();
                 img = img1;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -223,6 +224,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case 2:
+                Click();
                 img = img2;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -264,6 +266,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case 3:
+                Click();
                 img = img3;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -305,6 +308,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case 4:
+                Click();
                 img = img4;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -346,6 +350,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case 5:
+                Click();
                 img = img5;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -387,6 +392,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case 6:
+                Click();
                 img = img6;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -428,6 +434,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case 7:
+                Click();
                 img = img7;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -469,6 +476,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case 8:
+                Click();
                 img = img8;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -510,6 +518,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case 9:
+                Click();
                 img = img9;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -551,6 +560,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case 10:
+                Click();
                 img = img10;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -592,6 +602,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case 11:
+                Click();
                 img = img11;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
