@@ -1,8 +1,8 @@
 package com.example.pairs;
 
 import android.content.Context;
-import android.media.MediaDataSource;
 import android.media.MediaPlayer;
+import android.view.View;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -10,17 +10,15 @@ import java.io.Serializable;
 public class Sound implements Serializable {
     private static MediaPlayer
             soundGame = new MediaPlayer(),
-            soundTurn = new MediaPlayer(),
-            soundWin = new MediaPlayer();
+            soundTurn = new MediaPlayer();
     private int pauseTime;
 
     Sound() {}
 
-    public void start(Context con) {
-        soundGame = MediaPlayer.create(con, R.raw.game);
+    public void start(View.OnClickListener con) {
+          soundGame = MediaPlayer.create((Context) con, R.raw.music);
         soundGame.setLooping(true);
-        soundTurn = MediaPlayer.create(con, R.raw.turn);
-        soundWin = MediaPlayer.create(con, R.raw.win);
+        soundTurn = MediaPlayer.create((Context) con, R.raw.click);
     }
 
     public void gameStart() {
@@ -37,9 +35,6 @@ public class Sound implements Serializable {
         }
         soundTurn.start();
     }
-
-    public void winStart() { soundWin.start(); }
-
     public void gamePause() {
         pauseTime = soundGame.getCurrentPosition();
         soundGame.pause();

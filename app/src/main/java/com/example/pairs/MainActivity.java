@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +22,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Couple couple = new Couple();
     int AllSteps = 0;
     TextView text;
+    CheckBox ch1, ch2, ch3;
+    boolean IsPlay = false;
+    MediaPlayer mediaPlayer;
+    Sound sound;
+
+    static boolean music = true;
+    boolean click = true;
 
     @SuppressLint("ResourceType")
     @Override
@@ -26,6 +37,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         text = findViewById(R.id.textView3);
+        ch1 = findViewById(R.id.checkBox1);
+        ch2 = findViewById(R.id.checkBox2);
+        mediaPlayer = MediaPlayer.create(this, R.raw.music);
+        mediaPlayer.start();
+        if (music == true) {
+            mediaPlayer.start();
+            ch1.setChecked(true);
+        } else {
+            mediaPlayer.pause();
+            ch1.setChecked(false);
+        }
+
         text.setText(Integer.toString(AllSteps));
         board = new Board();
         board.getBoard();
@@ -73,6 +96,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         img10.setTag("10");
         img11.setTag("11");
 
+
+        ch1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ch1.isChecked()) {
+                    mediaPlayer.start();
+                    music = true;
+                } else {
+                    mediaPlayer.pause();
+                    music = false;
+                }
+            }
+        });
+        ch2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ch2.isChecked()) {
+                    IsPlay = true;
+                } else {
+                    IsPlay = false;
+                }
+            }
+        });
+
+
     }
 
 
@@ -80,16 +128,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         AllSteps++;
         text.setText(Integer.toString(AllSteps));
-        if (AllSteps==20){
+        if (AllSteps == 16) {
             Intent(AllSteps);
         }
         if (steps == 2) {
             couple = new Couple();
             steps = 0;
         }
+        ch2 = findViewById(R.id.checkBox2);
         ImageView img;
         switch (Integer.parseInt((String) view.getTag())) {
             case 0:
+
                 img = img0;
                 steps++;
                 img.setImageDrawable(GetImg(board.getBoard(), Integer.parseInt((String) view.getTag()) / 3, Integer.parseInt((String) view.getTag()) % 3));
@@ -616,7 +666,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent intent = new Intent(this, Result.class);
         intent.putExtra("steps", steps);
-        intent.putExtra("board",board.GetLen());
+        intent.putExtra("board", board.GetLen());
         startActivity(intent);
     }
 
